@@ -1,5 +1,5 @@
 # Ultralytics YOLO 🚀, AGPL-3.0 license
-
+from .Addmodules import *
 import contextlib
 import pickle
 import re
@@ -1030,6 +1030,11 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
                 legacy = False
                 if scale in "mlx":
                     args[3] = True
+        
+        elif m in {Retinexformer, ADNet}:
+            c2 = ch[f]
+            args = [c2, *args]
+
         elif m is AIFI:
             args = [ch[f], *args]
         elif m in {HGStem, HGBlock}:
