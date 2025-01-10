@@ -74,7 +74,7 @@ def main(opt):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Test YOLOv11 model performance.")
-    parser.add_argument('--weights', type=str, default='runs/train/YOLOv8n/weights/best.pt', help='trained weights path')
+    parser.add_argument('--weights', type=str, default='runs/train/YOLOv9t/weights/best.pt', help='trained weights path')
     parser.add_argument('--batch', type=int, default=1, help='total batch size for all GPUs')
     parser.add_argument('--imgs', nargs='+', type=int, default=[640, 640], help='image sizes [height, width]')
     parser.add_argument('--device', default='0', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
